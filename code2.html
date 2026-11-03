@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+<!-- STITCH_THREEJS_START:ANIMATION_8 class="fixed inset-0 w-full h-full bg-transparent" -->
+<div class="fixed inset-0 w-full h-full bg-transparent" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_8" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_8');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  
+const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(window.devicePixelRatio);
+container.appendChild(renderer.domElement);
+
+// Geometry - Slim Premium Electronic Card
+const cardGeometry = new THREE.BoxGeometry(3.37, 2.12, 0.05); // Standard card ratio
+const material = new THREE.MeshPhongMaterial({ 
+    color: 0x10243a, 
+    shininess: 100, 
+    specular: 0x2f80ff,
+    transparent: true,
+    opacity: 0.95
+});
+
+const card = new THREE.Mesh(cardGeometry, material);
+card.rotation.y = 0.5;
+card.rotation.x = 0.2;
+scene.add(card);
+
+// Adding "Circuits" via edges
+const edges = new THREE.EdgesGeometry(cardGeometry);
+const lineMaterial = new THREE.LineBasicMaterial({ color: 0x2f80ff, transparent: true, opacity: 0.3 });
+const wireframe = new THREE.LineSegments(edges, lineMaterial);
+card.add(wireframe);
+
+// Inner "Chip" geometry
+const chipGeom = new THREE.PlaneGeometry(0.5, 0.4);
+const chipMat = new THREE.MeshPhongMaterial({ color: 0x2f80ff, emissive: 0x2f80ff, emissiveIntensity: 0.5 });
+const chip = new THREE.Mesh(chipGeom, chipMat);
+chip.position.set(-1, 0, 0.03);
+card.add(chip);
+
+// Lighting
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+scene.add(ambientLight);
+
+const pointLight = new THREE.PointLight(0x2f80ff, 2, 10);
+pointLight.position.set(2, 2, 5);
+scene.add(pointLight);
+
+camera.position.z = 6;
+
+// Mouse Interaction
+let mouseX = 0;
+let mouseY = 0;
+window.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX / window.innerWidth) - 0.5;
+    mouseY = (e.clientY / window.innerHeight) - 0.5;
+});
+
+function animate() {
+    requestAnimationFrame(animate);
+    
+    // Smooth idle rotation
+    card.rotation.y += 0.002;
+    
+    // Mouse tracking tilt
+    card.rotation.y += (mouseX * 0.5 - (card.rotation.y - 0.5)) * 0.05;
+    card.rotation.x += (mouseY * 0.5 - (card.rotation.x - 0.2)) * 0.05;
+    
+    renderer.render(scene, camera);
+}
+
+window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+});
+
+animate();
+
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_8 -->
+
+
+</body></html>

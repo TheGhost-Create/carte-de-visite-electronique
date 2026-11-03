@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CardLink - Votre carte de visite. Plus intelligente que jamais.</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#213145",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary-fixed": "#dfe3e7",
+                        "surface-variant": "#d3e4fe",
+                        "surface-bright": "#f8f9ff",
+                        "primary": "#091426",
+                        "inverse-primary": "#bcc7de",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "on-tertiary-fixed": "#00201d",
+                        "tertiary": "#001815",
+                        "on-primary-fixed": "#111c2d",
+                        "primary-fixed-dim": "#bcc7de",
+                        "on-surface-variant": "#45474c",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#8590a6",
+                        "surface-container-low": "#eff4ff",
+                        "on-secondary-container": "#5e6367",
+                        "on-background": "#0b1c30",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#dce9ff",
+                        "outline-variant": "#c5c6cd",
+                        "primary-container": "#1e293b",
+                        "secondary-fixed-dim": "#c3c7cb",
+                        "outline": "#75777d",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#f8f9ff",
+                        "on-tertiary-container": "#28a094",
+                        "secondary": "#5a5f62",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "primary-fixed": "#d8e3fb",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-surface": "#0b1c30",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "surface": "#f8f9ff",
+                        "tertiary-fixed": "#89f5e7",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#171c1f",
+                        "secondary-container": "#dce0e4",
+                        "surface-container": "#e5eeff",
+                        "surface-tint": "#545f73",
+                        "tertiary-container": "#002f2a",
+                        "on-secondary-fixed-variant": "#43474b",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "2.5rem",
+                        "base": "4px",
+                        "gutter": "1.5rem",
+                        "sm": "0.5rem",
+                        "lg": "1.5rem",
+                        "md": "1rem",
+                        "container-margin": "2rem",
+                        "xs": "0.25rem"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "label-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-geist { font-family: 'Geist', sans-serif; }
+        .bento-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .bento-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 24px -10px rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-primary-container selection:text-white">
+<!-- TopNavBar -->
+<nav class="sticky top-0 z-50 flex justify-between items-center w-full px-gutter max-w-7xl mx-auto h-16 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-2">
+<img alt="CardLink Logo" class="w-8 h-8 rounded-md object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBympjtkXUD17PTUsZY4f46o-fQ7H4mLdZEI1Z_WUClZHgcYeSJpWpAboztqx9EN-7EjzYZuEC8GNXvhpefH3N9Cf77jmaXJad7yhss-Jcsl_9xOVZWPREhQyFa-impuOgYhMmh7ndyfzeb6YLjG0CBJmbr7OUQ068Mmtr-GYM_4A2ZC4hMiDbwPXV-VxHceXH6bR7ZosrpGMvRGKo2ldWiXHjNFYI1POlzoPJ6pzRlE8ZL-rPGAA2WPw"/>
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim">CardLink</span>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-secondary dark:text-secondary-fixed-dim font-label-md hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#features">Features</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-label-md hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#templates">Templates</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-label-md hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#ai">AI</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-label-md hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#enterprise">Enterprise</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-label-md hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#pricing">Pricing</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block text-label-md font-label-md text-secondary hover:text-primary transition-colors">Login</button>
+<button class="bg-primary-container text-white px-4 py-2 rounded-md text-label-md font-label-md hover:bg-primary transition-colors">Sign up</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-24 pb-32 px-gutter max-w-7xl mx-auto overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-low to-background -z-10 rounded-3xl opacity-50 blur-3xl"></div>
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-outline-variant/30 mb-6">
+<span class="material-symbols-outlined text-sm text-primary">auto_awesome</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">CardLink AI maintenant disponible</span>
+</div>
+<h1 class="text-display-lg font-display-lg text-primary mb-6 leading-tight">Votre carte de visite.<br/><span class="text-on-surface-variant">Plus intelligente que jamais.</span></h1>
+<p class="text-body-lg font-body-lg text-secondary mb-10">
+                    Créez une carte de visite digitale professionnelle, partagez-la par QR Code ou NFC et laissez votre assistant IA présenter votre activité à vos prospects.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary-container text-white px-6 py-3 rounded-lg text-label-md font-label-md hover:bg-primary transition-colors shadow-sm">Créer ma carte gratuitement</button>
+<button class="bg-[#f1f5f9] text-primary-container px-6 py-3 rounded-lg text-label-md font-label-md hover:bg-[#e2e8f0] transition-colors border border-[#e2e8f0] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">play_circle</span> Voir une démo
+                    </button>
+</div>
+<div class="mt-8 flex items-center gap-4 text-body-sm font-body-sm text-secondary">
+<div class="flex -space-x-2">
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="A macro shot of a sleek, minimalist smartphone screen displaying a professional digital business card with a dark slate background, crisp white typography, and subtle indigo accents. The screen features a prominent QR code, clean icons for WhatsApp, Call, and Email, and a small, glowing, floating AI chat bubble icon emitting a soft blue aura. High-end product photography style, dramatic studio lighting, sharp focus, tech-forward aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMzD1HgZuBpGSPCYS2ORemGvO7xs1e3xQTll7iBPa1Bivb7u_4NoP6dj0kjkrpBXHRlB9z__9oPyioTbJk9xvoy6LSsUso2P6JMlqc0n1ZdqFDr9QIj4EinUyl5HaNvsSnTmjlvM5OaV1d-__ULKY9JDMUZbtJt2C1vQ0YPUvylXBhAh0M2n9jVumGJFm3z8Zy3eGZLYppaTsCXAoUz6EiuaQmhKBRCRAG_P4Vc3_rav4wr8gEKONHjw"/>
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="A macro shot of a sleek, minimalist smartphone screen displaying a professional digital business card with a dark slate background, crisp white typography, and subtle indigo accents. The screen features a prominent QR code, clean icons for WhatsApp, Call, and Email, and a small, glowing, floating AI chat bubble icon emitting a soft blue aura. High-end product photography style, dramatic studio lighting, sharp focus, tech-forward aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT4wJen8V-NDlWTv1IABXXQFy2aeFOqmHARDxksx4_Aix524vpTRNFXicwL93A35FeL3rYKkGmEK-_oietmuQymYXaksp2cRngVeUFzjwPKfzQQ7XtZEfTZGaTWTZKHRALF7CB1lkgCfRWfyThUhNzvMRFjLBAZdGcxS0lQx0OXM2bJ-5lSOaxAMQYOzJn6sZKrTyIRkpMp7DA92o5HTNhhQy_YDcyufePqbGf_6sMX90RVcJOKeAB0A"/>
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="A macro shot of a sleek, minimalist smartphone screen displaying a professional digital business card with a dark slate background, crisp white typography, and subtle indigo accents. The screen features a prominent QR code, clean icons for WhatsApp, Call, and Email, and a small, glowing, floating AI chat bubble icon emitting a soft blue aura. High-end product photography style, dramatic studio lighting, sharp focus, tech-forward aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA82wM03DtUMwcaMNMOZIV_UfssKT1oeVTRqoqZCQ92DTKmsferNqGf59QSfMKgiH13CGcI-UW37GweHkJqgvCfE9ak59qGJ4rrMx0QfTHSuzcVPyhCpdKq9xFf7exWC-xCMo2kuwjVYYn3wirCzhtKXlO0CcT6KJyeRRdZq05SBb-O3mmIar_nnGb4CSmUX9UuFbDqf3j1qLMZXYlOMWsQ84FUdLA627CFS8Znvkn3Wi3pmJHKh5PBBg"/>
+</div>
+<span>Rejoignez +10,000 professionnels</span>
+</div>
+</div>
+<div class="relative flex justify-center lg:justify-end">
+<!-- Mockup abstract representation -->
+<div class="relative w-[300px] h-[600px] bg-white rounded-[2.5rem] shadow-2xl border-[8px] border-surface-container-high overflow-hidden transform rotate-2 hover:rotate-0 transition-transform duration-500">
+<div class="absolute top-0 inset-x-0 h-6 bg-surface-container-high rounded-b-2xl mx-16"></div>
+<!-- App UI Mockup inside -->
+<div class="h-full w-full bg-[#f8fafc] flex flex-col pt-12 p-4">
+<div class="bg-primary-container text-white rounded-2xl p-6 mb-4 shadow-sm relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-surface-container-highest/20 rounded-full blur-xl"></div>
+<img alt="CardLink Logo" class="w-12 h-12 rounded-lg mb-4 bg-white p-1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBympjtkXUD17PTUsZY4f46o-fQ7H4mLdZEI1Z_WUClZHgcYeSJpWpAboztqx9EN-7EjzYZuEC8GNXvhpefH3N9Cf77jmaXJad7yhss-Jcsl_9xOVZWPREhQyFa-impuOgYhMmh7ndyfzeb6YLjG0CBJmbr7OUQ068Mmtr-GYM_4A2ZC4hMiDbwPXV-VxHceXH6bR7ZosrpGMvRGKo2ldWiXHjNFYI1POlzoPJ6pzRlE8ZL-rPGAA2WPw"/>
+<h3 class="text-headline-md font-headline-md font-semibold text-white">Jean Dupont</h3>
+<p class="text-body-sm font-body-sm text-surface-variant opacity-80">Directeur Commercial</p>
+</div>
+<div class="bg-white rounded-xl p-4 flex flex-col items-center justify-center mb-4 border border-[#e2e8f0] shadow-sm">
+<img class="w-32 h-32 rounded-lg object-cover mb-2" data-alt="A macro shot of a sleek, minimalist smartphone screen displaying a professional digital business card with a dark slate background, crisp white typography, and subtle indigo accents. The screen features a prominent QR code, clean icons for WhatsApp, Call, and Email, and a small, glowing, floating AI chat bubble icon emitting a soft blue aura. High-end product photography style, dramatic studio lighting, sharp focus, tech-forward aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIaDsiyirIVsEHzpDRCCd_AN1845mtqylfVPIzPbWuuHzrrt_qp2UtuHWIWB8T251mA3wS7p5MTOxmdDsMtyr9cHj51E7BJKw5V3zS3EdY70aULKbCtyPSrbIHrjUth263X_X61caYoGXk7PyrsHNtAmI6ds1_IN2EuPMsTb0JYOOQQ9euMm22puuTyW24joUFRY7n3_Fd3R2IjHOzu3nymAIQMCeNgIoR_huv-CJMPLT-QSr5-1Z-IQ"/>
+<p class="text-label-sm font-label-sm text-secondary">Scanner pour enregistrer</p>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<div class="bg-white border border-[#e2e8f0] rounded-lg p-3 flex flex-col items-center justify-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary">call</span>
+<span class="text-[10px] text-secondary font-medium">Appeler</span>
+</div>
+<div class="bg-white border border-[#e2e8f0] rounded-lg p-3 flex flex-col items-center justify-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary">mail</span>
+<span class="text-[10px] text-secondary font-medium">Email</span>
+</div>
+<div class="bg-white border border-[#e2e8f0] rounded-lg p-3 flex flex-col items-center justify-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary">chat</span>
+<span class="text-[10px] text-secondary font-medium">WhatsApp</span>
+</div>
+</div>
+<!-- Floating AI Chat -->
+<div class="absolute bottom-6 right-4 left-4 bg-white rounded-xl p-3 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-[#e2e8f0] flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-sm text-primary">smart_toy</span>
+</div>
+<div>
+<p class="text-[11px] font-semibold text-primary mb-1">Assistant IA</p>
+<p class="text-[10px] text-secondary leading-tight">Bonjour ! Je peux vous présenter l'activité de Jean. Que souhaitez-vous savoir ?</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Decorative elements behind mockup -->
+<div class="absolute -right-8 top-1/4 w-24 h-24 bg-surface-container-highest rounded-full blur-2xl -z-10"></div>
+<div class="absolute -left-12 bottom-1/4 w-32 h-32 bg-primary-fixed rounded-full blur-3xl -z-10"></div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-xl px-gutter grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-lg bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-outline mt-24">
+<div class="col-span-2 lg:col-span-2 flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<img alt="CardLink Logo" class="w-6 h-6 rounded-md object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBympjtkXUD17PTUsZY4f46o-fQ7H4mLdZEI1Z_WUClZHgcYeSJpWpAboztqx9EN-7EjzYZuEC8GNXvhpefH3N9Cf77jmaXJad7yhss-Jcsl_9xOVZWPREhQyFa-impuOgYhMmh7ndyfzeb6YLjG0CBJmbr7OUQ068Mmtr-GYM_4A2ZC4hMiDbwPXV-VxHceXH6bR7ZosrpGMvRGKo2ldWiXHjNFYI1POlzoPJ6pzRlE8ZL-rPGAA2WPw"/>
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim">CardLink</span>
+</div>
+<p class="text-body-sm font-body-sm text-secondary dark:text-secondary-fixed-dim">
+                © 2024 CardLink AI. All rights reserved.<br/>
+                Votre carte de visite. Plus intelligente que jamais.
+            </p>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="text-label-md font-label-md text-primary font-bold">Produit</h4>
+<a class="text-body-sm font-body-sm text-secondary hover:text-primary transition-colors duration-200" href="#">Fonctionnalités</a>
+<a class="text-body-sm font-body-sm text-secondary hover:text-primary transition-colors duration-200" href="#">Tarifs</a>
+<a class="text-body-sm font-body-sm text-secondary hover:text-primary transition-colors duration-200" href="#">Assistant IA</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="text-label-md font-label-md text-primary font-bold">Ressources</h4>
+<a class="text-body-sm font-body-sm text-secondary hover:text-primary transition-colors duration-200" href="#">Centre d'aide</a>
+<a class="text-body-sm font-body-sm text-secondary hover:text-primary transition-colors duration-200" href="#">Blog</a>
+<a class="text-body-sm font-body-sm text-secondary hover:text-primary transition-colors duration-200" href="#">Tutoriels</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="text-label-md font-label-md text-primary font-bold">Légal</h4>
+<a class="text-body-sm font-body-sm text-secondary hover:text-primary transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="text-body-sm font-body-sm text-secondary hover:text-primary transition-colors duration-200" href="#">Terms of Service</a>
+<a class="text-body-sm font-body-sm text-secondary hover:text-primary transition-colors duration-200" href="#">Cookies</a>
+<a class="text-body-sm font-body-sm text-secondary hover:text-primary transition-colors duration-200" href="#">Contact Support</a>
+</div>
+</footer>
+</body></html>

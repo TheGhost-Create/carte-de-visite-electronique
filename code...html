@@ -1,0 +1,283 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CardLink Onboarding - Step 2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "inverse-surface": "#213145",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary-fixed": "#dfe3e7",
+                        "surface-variant": "#d3e4fe",
+                        "surface-bright": "#f8f9ff",
+                        "primary": "#091426",
+                        "inverse-primary": "#bcc7de",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "on-tertiary-fixed": "#00201d",
+                        "tertiary": "#001815",
+                        "on-primary-fixed": "#111c2d",
+                        "primary-fixed-dim": "#bcc7de",
+                        "on-surface-variant": "#45474c",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#8590a6",
+                        "surface-container-low": "#eff4ff",
+                        "on-secondary-container": "#5e6367",
+                        "on-background": "#0b1c30",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#dce9ff",
+                        "outline-variant": "#c5c6cd",
+                        "primary-container": "#1e293b",
+                        "secondary-fixed-dim": "#c3c7cb",
+                        "outline": "#75777d",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#f8f9ff",
+                        "on-tertiary-container": "#28a094",
+                        "secondary": "#5a5f62",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "primary-fixed": "#d8e3fb",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-surface": "#0b1c30",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "surface": "#f8f9ff",
+                        "tertiary-fixed": "#89f5e7",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#171c1f",
+                        "secondary-container": "#dce0e4",
+                        "surface-container": "#e5eeff",
+                        "surface-tint": "#545f73",
+                        "tertiary-container": "#002f2a",
+                        "on-secondary-fixed-variant": "#43474b",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "2.5rem",
+                        "base": "4px",
+                        "gutter": "1.5rem",
+                        "sm": "0.5rem",
+                        "lg": "1.5rem",
+                        "md": "1rem",
+                        "container-margin": "2rem",
+                        "xs": "0.25rem"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Geist"],
+                        "headline-lg-mobile": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "headline-lg": ["Geist"],
+                        "label-md": ["Geist"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline-md, .font-headline-lg, .font-label-md, .font-label-sm { font-family: 'Geist', sans-serif; }
+        
+        /* Subtle glow for AI buttons */
+        .ai-glow:hover {
+            box-shadow: 0 0 15px rgba(0, 47, 42, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<!-- TopNavBar (Simplified for Onboarding) -->
+<header class="sticky top-0 z-50 flex justify-between items-center w-full px-gutter max-w-7xl mx-auto h-16 bg-surface/80 backdrop-blur-md border-b border-outline-variant flat no shadows">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-2xl" data-weight="fill">style</span>
+<span class="text-headline-md font-headline-md font-bold text-primary">CardLink</span>
+</div>
+<button class="text-secondary font-label-md hover:text-primary transition-colors flex items-center gap-xs">
+            Save &amp; Exit
+        </button>
+</header>
+<main class="flex-grow w-full max-w-3xl mx-auto px-gutter py-xl">
+<!-- Progress Stepper -->
+<div class="mb-xl">
+<div class="flex items-center justify-between relative">
+<!-- Progress Line Background -->
+<div class="absolute left-0 top-1/2 transform -translate-y-1/2 w-full h-[2px] bg-secondary-fixed z-0"></div>
+<!-- Active Progress Line -->
+<div class="absolute left-0 top-1/2 transform -translate-y-1/2 w-1/4 h-[2px] bg-primary z-0 transition-all duration-500"></div>
+<!-- Step 1 (Completed) -->
+<div class="relative z-10 flex flex-col items-center gap-xs group">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<span class="text-label-sm font-label-sm text-primary absolute top-10 whitespace-nowrap">Personal Info</span>
+</div>
+<!-- Step 2 (Active) -->
+<div class="relative z-10 flex flex-col items-center gap-xs">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm ring-4 ring-primary-fixed">
+<span class="text-label-md font-label-md">2</span>
+</div>
+<span class="text-label-sm font-label-sm text-primary font-bold absolute top-10 whitespace-nowrap">Activity</span>
+</div>
+<!-- Step 3 (Pending) -->
+<div class="relative z-10 flex flex-col items-center gap-xs">
+<div class="w-8 h-8 rounded-full bg-surface text-secondary border border-outline-variant flex items-center justify-center">
+<span class="text-label-md font-label-md">3</span>
+</div>
+<span class="text-label-sm font-label-sm text-secondary absolute top-10 whitespace-nowrap hidden md:block">Template</span>
+</div>
+<!-- Step 4 (Pending) -->
+<div class="relative z-10 flex flex-col items-center gap-xs">
+<div class="w-8 h-8 rounded-full bg-surface text-secondary border border-outline-variant flex items-center justify-center">
+<span class="text-label-md font-label-md">4</span>
+</div>
+<span class="text-label-sm font-label-sm text-secondary absolute top-10 whitespace-nowrap hidden md:block">AI Polish</span>
+</div>
+<!-- Step 5 (Pending) -->
+<div class="relative z-10 flex flex-col items-center gap-xs">
+<div class="w-8 h-8 rounded-full bg-surface text-secondary border border-outline-variant flex items-center justify-center">
+<span class="text-label-md font-label-md">5</span>
+</div>
+<span class="text-label-sm font-label-sm text-secondary absolute top-10 whitespace-nowrap hidden md:block">Publish</span>
+</div>
+</div>
+</div>
+<!-- Main Content Area -->
+<div class="mt-container-margin">
+<h1 class="text-headline-lg font-headline-lg text-primary mb-sm">Describe Your Activity</h1>
+<p class="text-body-md font-body-md text-secondary mb-lg">Let our AI build your professional profile. Just tell us what you do in your own words.</p>
+<!-- AI Input Section -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-lg shadow-[0px_4px_12px_rgba(0,0,0,0.03)] mb-xl">
+<div class="relative">
+<span class="material-symbols-outlined absolute top-4 left-4 text-on-tertiary-container">auto_awesome</span>
+<textarea class="w-full min-h-[120px] pl-12 pr-4 py-4 rounded-md border border-outline-variant bg-surface focus:border-primary-container focus:ring-2 focus:ring-primary-fixed focus:outline-none text-body-md font-body-md resize-y placeholder:text-outline" placeholder="Décrivez votre activité en quelques phrases... (ex: Je suis un designer freelance spécialisé dans les interfaces B2B...)"></textarea>
+</div>
+<div class="flex justify-end mt-md">
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-md hover:bg-primary-container transition-colors flex items-center gap-2 ai-glow shadow-sm">
+<span class="material-symbols-outlined text-sm">magic_button</span>
+                        ✨ Générer mon profil
+                    </button>
+</div>
+</div>
+<!-- AI Proposals Section (Simulated State: After Generation) -->
+<div class="space-y-md animate-[fadeIn_0.5s_ease-out]">
+<h2 class="text-headline-md font-headline-md text-primary flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-tertiary-container">model_training</span>
+                    AI Suggestions
+                </h2>
+<!-- Proposal: Name/Title -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md shadow-[0px_4px_12px_rgba(0,0,0,0.03)] flex flex-col md:flex-row gap-md items-start md:items-center">
+<div class="flex-grow">
+<div class="text-label-sm font-label-sm text-secondary mb-xs uppercase tracking-wider">Professional Title</div>
+<div class="text-body-lg font-body-lg text-primary font-medium">Senior B2B UI/UX Designer</div>
+</div>
+<div class="flex items-center gap-sm w-full md:w-auto mt-sm md:mt-0">
+<button class="flex-1 md:flex-none border border-outline-variant text-secondary hover:text-primary hover:bg-surface-container-low px-3 py-2 rounded-md text-label-sm font-label-sm transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]">edit</span> Modify
+                        </button>
+<button class="flex-1 md:flex-none bg-surface-container-high text-primary hover:bg-surface-container-highest px-3 py-2 rounded-md text-label-sm font-label-sm transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]">refresh</span> Retry
+                        </button>
+<button class="flex-1 md:flex-none bg-primary text-on-primary hover:bg-primary-container px-4 py-2 rounded-md text-label-sm font-label-sm transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]">check</span> Accept
+                        </button>
+</div>
+</div>
+<!-- Proposal: Bio -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md shadow-[0px_4px_12px_rgba(0,0,0,0.03)] flex flex-col md:flex-row gap-md items-start">
+<div class="flex-grow">
+<div class="text-label-sm font-label-sm text-secondary mb-xs uppercase tracking-wider">Biography</div>
+<div class="text-body-md font-body-md text-on-surface-variant">
+                            Specializing in crafting intuitive, data-dense interfaces for enterprise SaaS platforms. I bridge the gap between complex functionality and clean, modern aesthetics to deliver executive-level user experiences.
+                        </div>
+</div>
+<div class="flex flex-row md:flex-col items-center gap-sm w-full md:w-auto mt-sm md:mt-0">
+<button class="flex-1 md:w-full border border-outline-variant text-secondary hover:text-primary hover:bg-surface-container-low px-3 py-2 rounded-md text-label-sm font-label-sm transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="flex-1 md:w-full bg-surface-container-high text-primary hover:bg-surface-container-highest px-3 py-2 rounded-md text-label-sm font-label-sm transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+</button>
+<button class="flex-1 md:w-full bg-primary text-on-primary hover:bg-primary-container px-4 py-2 rounded-md text-label-sm font-label-sm transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+</div>
+</div>
+<!-- Proposal: Services -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md shadow-[0px_4px_12px_rgba(0,0,0,0.03)] flex flex-col md:flex-row gap-md items-start">
+<div class="flex-grow">
+<div class="text-label-sm font-label-sm text-secondary mb-xs uppercase tracking-wider">Key Services</div>
+<div class="flex flex-wrap gap-sm mt-sm">
+<span class="bg-surface-container-low text-primary px-3 py-1 rounded-full text-label-sm font-label-sm border border-outline-variant">UI/UX Design</span>
+<span class="bg-surface-container-low text-primary px-3 py-1 rounded-full text-label-sm font-label-sm border border-outline-variant">Design Systems</span>
+<span class="bg-surface-container-low text-primary px-3 py-1 rounded-full text-label-sm font-label-sm border border-outline-variant">SaaS Prototyping</span>
+</div>
+</div>
+<div class="flex flex-row md:flex-col items-center gap-sm w-full md:w-auto mt-sm md:mt-0">
+<button class="flex-1 md:w-full border border-outline-variant text-secondary hover:text-primary hover:bg-surface-container-low px-3 py-2 rounded-md text-label-sm font-label-sm transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="flex-1 md:w-full bg-surface-container-high text-primary hover:bg-surface-container-highest px-3 py-2 rounded-md text-label-sm font-label-sm transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+</button>
+<button class="flex-1 md:w-full bg-primary text-on-primary hover:bg-primary-container px-4 py-2 rounded-md text-label-sm font-label-sm transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation -->
+<div class="mt-xl pt-lg border-t border-outline-variant flex justify-between items-center">
+<button class="text-secondary font-label-md text-label-md hover:text-primary transition-colors px-4 py-2 flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                    Back
+                </button>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-md hover:bg-primary-container transition-colors shadow-sm flex items-center gap-xs">
+                    Continue to Template
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl px-gutter grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-lg bg-surface-container-lowest border-t border-outline-variant flat no shadows mt-auto">
+<div class="col-span-2 lg:col-span-2">
+<div class="text-headline-md font-headline-md font-bold text-primary mb-sm">CardLink</div>
+<p class="text-body-sm font-body-sm text-secondary">© 2024 CardLink AI. All rights reserved.</p>
+</div>
+<div class="flex flex-col gap-sm">
+<a class="text-body-sm font-body-sm text-secondary hover:text-primary transition-colors duration-200" href="#">Privacy Policy</a>
+<a class="text-body-sm font-body-sm text-secondary hover:text-primary transition-colors duration-200" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-sm">
+<a class="text-body-sm font-body-sm text-secondary hover:text-primary transition-colors duration-200" href="#">Cookies</a>
+<a class="text-body-sm font-body-sm text-secondary hover:text-primary transition-colors duration-200" href="#">Contact Support</a>
+</div>
+</footer>
+</body></html>

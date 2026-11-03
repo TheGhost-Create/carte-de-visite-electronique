@@ -1,0 +1,414 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CardLink - Your identity. One smart card.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        /* Geist Font Face (Local fallback if needed, but assuming it's available or mapped closely) */
+        @font-face {
+            font-family: 'Geist';
+            src: local('Helvetica Neue'), local('Arial'), sans-serif; /* Fallback for demonstration */
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ffb4ab",
+                        "tertiary-container": "#8791a4",
+                        "surface-container-high": "#252a31",
+                        "surface-tint": "#aec6ff",
+                        "surface": "#0f141a",
+                        "on-surface": "#dee3eb",
+                        "inverse-primary": "#005ac4",
+                        "surface-container": "#1b2026",
+                        "secondary-fixed-dim": "#b5c8e5",
+                        "on-primary-fixed": "#001a42",
+                        "on-tertiary": "#273140",
+                        "primary": "#aec6ff",
+                        "inverse-surface": "#dee3eb",
+                        "surface-container-highest": "#30353c",
+                        "on-secondary-container": "#a3b7d3",
+                        "on-primary": "#002e6b",
+                        "on-surface-variant": "#c2c6d7",
+                        "on-background": "#dee3eb",
+                        "on-tertiary-container": "#202a39",
+                        "tertiary-fixed": "#d9e3f7",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#071c32",
+                        "secondary-fixed": "#d2e4ff",
+                        "on-primary-container": "#00275e",
+                        "surface-container-low": "#171c22",
+                        "secondary-container": "#354860",
+                        "background": "#0f141a",
+                        "outline": "#8c90a0",
+                        "primary-fixed": "#d8e2ff",
+                        "inverse-on-surface": "#2c3137",
+                        "on-tertiary-fixed": "#121c2a",
+                        "on-error-container": "#ffdad6",
+                        "secondary": "#b5c8e5",
+                        "tertiary-fixed-dim": "#bdc7db",
+                        "on-primary-fixed-variant": "#004396",
+                        "surface-bright": "#353a40",
+                        "outline-variant": "#414754",
+                        "primary-container": "#4f8eff",
+                        "surface-dim": "#0f141a",
+                        "on-secondary": "#1e3148",
+                        "primary-fixed-dim": "#aec6ff",
+                        "tertiary": "#bdc7db",
+                        "surface-container-lowest": "#0a0f14",
+                        "on-tertiary-fixed-variant": "#3e4757",
+                        "on-secondary-fixed-variant": "#354860",
+                        "surface-variant": "#30353c",
+                        /* Brand Specific additions mapped from prompt instructions */
+                        "midnight-blue": "#07111F",
+                        "electric-blue": "#2F80FF"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-padding-sm": "1rem",
+                        "gutter": "1.5rem",
+                        "container-padding-md": "2rem",
+                        "stack-xl": "3rem",
+                        "stack-md": "1.5rem",
+                        "unit": "4px",
+                        "stack-xs": "0.5rem",
+                        "container-padding-lg": "4rem"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Geist"],
+                        "headline-md": ["Geist"],
+                        "display-lg": ["Geist"],
+                        "display-lg-mobile": ["Geist"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "code": ["Geist"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }],
+                        "code": ["13px", { "lineHeight": "1.4", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #07111F; /* midnight blue */
+            color: #dee3eb;
+            overflow-x: hidden;
+        }
+        .bg-grid-tech {
+            background-image: 
+                linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        .glow-radial {
+            background: radial-gradient(circle at center, rgba(47, 128, 255, 0.15) 0%, transparent 60%);
+        }
+        .glass-panel {
+            background: rgba(10, 22, 40, 0.7);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .btn-primary-glow {
+            background-color: #2F80FF;
+            color: white;
+            box-shadow: 0 0 20px rgba(47, 128, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+        .btn-primary-glow:hover {
+            box-shadow: 0 0 30px rgba(47, 128, 255, 0.6);
+            transform: translateY(-1px);
+        }
+        .btn-ghost {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #dee3eb;
+            transition: all 0.3s ease;
+        }
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Nav active state override mapping from JSON */
+        .nav-active {
+            color: theme('colors.primary');
+            border-bottom: 2px solid theme('colors.primary');
+            padding-bottom: 4px;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-body-md relative">
+<!-- Grid Background -->
+<div class="fixed inset-0 bg-grid-tech z-0 pointer-events-none"></div>
+<!-- TopNavBar (Rendered from JSON) -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl border-b border-outline-variant/30 flex justify-between items-center h-16 px-gutter max-w-[1440px] mx-auto left-0 right-0">
+<div class="flex items-center gap-gutter">
+<span class="font-headline-md text-headline-md font-bold tracking-tighter text-primary">CardLink</span>
+</div>
+<div class="hidden md:flex items-center gap-stack-md font-label-sm text-label-sm uppercase tracking-wider">
+<!-- Transactional/Landing page, active logic: None strictly align, default to inactive/neutral for global nav, 
+                 but as per JSON instruction, if it's a search page Explore is active. Here it's a landing page.
+                 Suppressing nav shell is permitted for transactional, but this is a landing page. 
+                 Let's render standard inactive links for a marketing view. -->
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Dashboard</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Analytics</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Assets</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Security</a>
+</div>
+<div class="flex items-center gap-stack-xs text-primary">
+<span class="material-symbols-outlined hover:text-primary transition-colors duration-200 cursor-pointer" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined hover:text-primary transition-colors duration-200 cursor-pointer" data-icon="settings">settings</span>
+<img alt="User profile" class="w-8 h-8 rounded-full ml-2 object-cover border border-outline-variant/30" data-alt="A small circular avatar placeholder image showing a silhouetted profile on a dark gradient background, suitable for a professional high-end fintech application UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL5XQA21sVlRcP_sRtzjfm3m5AiibZuDOOHsy-FMrT_ciXKXTxaLMGc_-YbNcZQQ9ZZuZ9HmUAnx057y7n6xSTYaHiVjb3QGU4nZrYrNKyJzIRe5hLjJE0yUs3EIo0gz0IE0fAp3lZu-EAzkHfWHdXLo5U3xXXDvZwUQ6P1BcPMy4qFvBbwMzopb6sIHxntMH3yUcdiTiO4GPUBEjcp0h61Nd8RfJ7MADkzeYVJyuNILQCe-oMcg488A">
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow relative z-10 pt-24 md:pt-32 pb-24">
+<!-- Hero Section -->
+<section class="relative max-w-[1440px] mx-auto px-gutter min-h-[819px] flex flex-col lg:flex-row items-center justify-center gap-container-padding-lg">
+<!-- Background Shader (Absolute) -->
+<!-- STITCH_SHADER_START:ANIMATION_9 class="absolute inset-0 w-full h-full -z-10 opacity-30" -->
+<div class="absolute inset-0 w-full h-full -z-10 opacity-30" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_9" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_9');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `
+precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+varying vec2 v_texCoord;
+
+void main() {
+    vec2 uv = v_texCoord;
+    
+    // Background base
+    vec3 color = vec3(0.027, 0.066, 0.121); // #07111f
+    
+    // Subtle radial glow from bottom right
+    float dist = distance(uv, vec2(1.0, 0.0));
+    color += vec3(0.184, 0.502, 1.0) * (1.0 - smoothstep(0.0, 1.2, dist)) * 0.15;
+    
+    // Very subtle grid
+    vec2 grid = fract(uv * 40.0);
+    float line = step(0.98, grid.x) + step(0.98, grid.y);
+    color += line * 0.02;
+    
+    gl_FragColor = vec4(color, 1.0);
+}
+`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_9 -->
+<!-- Hero Text -->
+<div class="flex-1 flex flex-col z-20 max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 w-fit mb-6">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase">Next Gen Hardware</span>
+</div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-6">
+                    Your identity. <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">One smart card.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl">
+                    A digital business card that presents your activity, answers visitors, and transforms interactions into opportunities. Precision engineered for the modern professional.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="btn-primary-glow font-label-sm text-label-sm uppercase px-8 py-4 rounded-DEFAULT flex items-center justify-center gap-2">
+                        Create my card
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button class="btn-ghost font-label-sm text-label-sm uppercase px-8 py-4 rounded-DEFAULT flex items-center justify-center">
+                        Explore CardLink
+                    </button>
+</div>
+</div>
+<!-- Hero Visual: 3D Scene -->
+<div class="flex-1 relative w-full h-[400px] lg:h-[600px] z-20 glow-radial">
+<!-- STITCH_THREEJS_START:ANIMATION_8 class="absolute inset-0 w-full h-full object-contain" -->
+<div class="absolute inset-0 w-full h-full object-contain" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_8" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_8');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  
+const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(window.devicePixelRatio);
+container.appendChild(renderer.domElement);
+
+// Geometry - Slim Premium Electronic Card
+const cardGeometry = new THREE.BoxGeometry(3.37, 2.12, 0.05); // Standard card ratio
+const material = new THREE.MeshPhongMaterial({ 
+    color: 0x10243a, 
+    shininess: 100, 
+    specular: 0x2f80ff,
+    transparent: true,
+    opacity: 0.95
+});
+
+const card = new THREE.Mesh(cardGeometry, material);
+card.rotation.y = 0.5;
+card.rotation.x = 0.2;
+scene.add(card);
+
+// Adding "Circuits" via edges
+const edges = new THREE.EdgesGeometry(cardGeometry);
+const lineMaterial = new THREE.LineBasicMaterial({ color: 0x2f80ff, transparent: true, opacity: 0.3 });
+const wireframe = new THREE.LineSegments(edges, lineMaterial);
+card.add(wireframe);
+
+// Inner "Chip" geometry
+const chipGeom = new THREE.PlaneGeometry(0.5, 0.4);
+const chipMat = new THREE.MeshPhongMaterial({ color: 0x2f80ff, emissive: 0x2f80ff, emissiveIntensity: 0.5 });
+const chip = new THREE.Mesh(chipGeom, chipMat);
+chip.position.set(-1, 0, 0.03);
+card.add(chip);
+
+// Lighting
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+scene.add(ambientLight);
+
+const pointLight = new THREE.PointLight(0x2f80ff, 2, 10);
+pointLight.position.set(2, 2, 5);
+scene.add(pointLight);
+
+camera.position.z = 6;
+
+// Mouse Interaction
+let mouseX = 0;
+let mouseY = 0;
+window.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX / window.innerWidth) - 0.5;
+    mouseY = (e.clientY / window.innerHeight) - 0.5;
+});
+
+function animate() {
+    requestAnimationFrame(animate);
+    
+    // Smooth idle rotation
+    card.rotation.y += 0.002;
+    
+    // Mouse tracking tilt
+    card.rotation.y += (mouseX * 0.5 - (card.rotation.y - 0.5)) * 0.05;
+    card.rotation.x += (mouseY * 0.5 - (card.rotation.x - 0.2)) * 0.05;
+    
+    renderer.render(scene, camera);
+}
+
+window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+});
+
+animate();
+
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_8 -->
+</div>
+</section>
+</main>
+</body></html>
